@@ -7,7 +7,16 @@ from datetime import datetime
 from decimal import Decimal
 
 
-class UserRequestStockSchema(BaseModel):
+
+from pydantic import BaseModel
+
+
+class StockSchema(BaseModel):
+    name: str
+    price: int
+    code: str
+
+"""class UserRequestStockSchema(BaseModel):
     date: Optional[datetime] = None
     name: str = Field(..., max_length=100)
     symbol: str = Field(..., max_length=20)
@@ -18,3 +27,4 @@ class UserRequestStockSchema(BaseModel):
 
     class Config:
         orm_model=True
+        """

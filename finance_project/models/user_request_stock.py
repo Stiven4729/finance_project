@@ -1,11 +1,21 @@
 """Class for Stocks model."""
 
-from finance_project.database.database import Base
-from sqlalchemy import Column, Integer, DateTime, String, Numeric
-from sqlalchemy.sql import func
+#from finance_project.database.database import Base
+#from sqlalchemy import Column, Integer, DateTime, String, Numeric
+#from sqlalchemy.sql import func
 
 
-class UserRequestStock(Base):
+from dataclasses import dataclass
+
+
+@dataclass
+class Stock():
+    name: str
+    price: int
+    code: str
+
+
+"""class UserRequestStock(Base):
     __tablename__ = 'user_request_stock'
     
     id = Column(Integer, primary_key=True, index=True)
@@ -16,4 +26,4 @@ class UserRequestStock(Base):
     high = Column(Numeric(6, 2))
     low = Column(Numeric(6, 2))
     close = Column(Numeric(6, 2))
-    
+   """ 
